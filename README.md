@@ -116,4 +116,4 @@ To build the code, follow these steps.
   gulp build
   ```
   
-5. You will find the compiled code in the `dist` folder, available in three module formats: AMD, CommonJS and ES6.
+5. You will find the compiled code in the `dist` folder, available in module formats: AMD, CommonJS, ES2015, SystemJS.
