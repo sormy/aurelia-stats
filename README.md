@@ -15,7 +15,7 @@ Expected to be used only in browser environment and only for debug purposes.
 1. Install aurelia-stats:
 
   ```bash
-  jspm install aurelia-stats
+  jspm install aurelia-stats --dev
   ```
   
 2. Use the plugin in your app's main.js:
