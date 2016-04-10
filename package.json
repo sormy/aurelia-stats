@@ -26,8 +26,8 @@
       "dist": "dist/amd"
     },
     "dependencies": {
-      "aurelia-framework": "^1.0.0-beta.1.1.0",
-      "jquery": "^1.0"
+      "aurelia-framework": "^1.0.0",
+      "jquery": "*"
     }
   },
   "dependencies": {
