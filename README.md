@@ -15,7 +15,7 @@ Expected to be used only in browser environment and only for debug purposes.
 1. Install aurelia-stats:
 
   ```bash
-  jspm install aurelia-stats
+  jspm install github:sormy/aurelia-stats
   ```
   
 2. Use the plugin in your app's main.js:
@@ -26,9 +26,9 @@ Expected to be used only in browser environment and only for debug purposes.
       .standardConfiguration()
       .developmentLogging();
    
-    aurelia.use.plugin('aurelia-stats');
+    aurelia.use.plugin('sormy/aurelia-stats');
     // or
-    //aurelia.use.plugin('aurelia-stats', options);
+    //aurelia.use.plugin('sormy/aurelia-stats', options);
 
     aurelia.start().then(() => aurelia.setRoot());
   }
@@ -37,7 +37,7 @@ Expected to be used only in browser environment and only for debug purposes.
 3. Include plugin's CSS in your app's index.html:
   
   ```css
-  <link rel="stylesheet" href="jspm_packages/github/aurelia-stats@1.0.0/aurelia-stats.css">
+  <link rel="stylesheet" href="jspm_packages/github/sormy/aurelia-stats@1.0.0/aurelia-stats.css">
   ```
 
 ## Syntax ##
@@ -60,7 +60,7 @@ Expected to be used only in browser environment and only for debug purposes.
 Plugin options could be passsed like below:
 
   ```javascript
-  aurelia.use.plugin('aurelia-stats', {
+  aurelia.use.plugin('sormy/aurelia-stats', {
     threshold: 100,
     interval: 1000,
     warnLevel: 0.6,

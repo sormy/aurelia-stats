@@ -63,7 +63,11 @@ gulp.task('build-dts', function(){
 
 gulp.task('build-css', function() {
   return gulp.src(paths.style)
-    .pipe(gulp.dest(paths.output));
+    .pipe(gulp.dest(paths.output))
+    .pipe(gulp.dest(paths.output + 'es2015'))
+    .pipe(gulp.dest(paths.output + 'commonjs'))
+    .pipe(gulp.dest(paths.output + 'amd'))
+    .pipe(gulp.dest(paths.output + 'system'));
 });
 
 gulp.task('build', function(callback) {
