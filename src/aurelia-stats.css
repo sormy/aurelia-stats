@@ -1,0 +1,44 @@
+.au-stats {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  color: white;
+  background-color: black;
+  width: 100px;
+  height: 100px;
+}
+
+.au-stats-graph {
+  display: block;
+  width: 100%;
+  height: 50px;
+}
+
+.au-stats-text {
+  font-family: monospace;
+  height: 50px;
+  font-size: 9px;
+  line-height: 12px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.au-stats-title {
+  width: 30px;
+  float: left;
+  text-align: right;
+  padding-right: 5px;
+}
+
+.au-stats-value {
+}
+
+.au-stats-value:after {
+  content: ".";
+  line-height: 0;
+  height: 0;
+  display: block;
+  visibility: hidden;
+  clear: both;
+}
