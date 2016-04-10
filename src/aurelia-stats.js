@@ -1,5 +1,5 @@
 import * as $ from 'jquery';
-import {ObserverLocator} from 'aurelia-binding';
+import {ObserverLocator} from 'aurelia-framework';
 
 class AureliaStatsPlugin {
   threshold = 100; 
@@ -74,19 +74,19 @@ class AureliaStatsPlugin {
         <canvas class="au-stats-graph"></canvas>
         <div class="au-stats-text">
           <div class="au-stats-dirty-checker">
-            <div class="au-stats-title">DC: </div>
+            <div class="au-stats-title">DC:</div>
             <div class="au-stats-value"></div>
           </div>
           <div class="au-stats-micro-tasks">
-            <div class="au-stats-title">MT: </div>
+            <div class="au-stats-title">MT:</div>
             <div class="au-stats-value"></div>
           </div>
           <div class="au-stats-regular-tasks">
-            <div class="au-stats-title">RT: </div>
+            <div class="au-stats-title">RT:</div>
             <div class="au-stats-value"></div>
           </div>
           <div class="au-stats-summary">
-            <div class="au-stats-title">SUM: </div>
+            <div class="au-stats-title">SUM:</div>
             <div class="au-stats-value"></div>
           </div>
         </div>
