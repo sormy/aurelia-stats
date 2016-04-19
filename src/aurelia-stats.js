@@ -123,6 +123,14 @@ class AureliaStatsPlugin {
     
     this.clearCurrentStats();
   }
+  
+  now() {
+    if (window.performance) {
+      return window.performance.now();
+    } else {
+      return Date.now();
+    }
+  }
 
   patchDirtyChecker() {
     var self = this;
@@ -131,9 +139,9 @@ class AureliaStatsPlugin {
 
     this.observerLocator.dirtyChecker.check = function() {
       self.currentStats.dirtyCheckerSize = Math.max(self.currentStats.dirtyCheckerSize, this.tracked.length);
-      var startTime = Date.now();
+      var startTime = self.now();
       oldCheck.call(this);
-      self.currentStats.dirtyCheckerLength += Date.now() - startTime;
+      self.currentStats.dirtyCheckerLength += self.now() - startTime;
     }
 
     if (this.debugDirtyChecker) {
@@ -153,18 +161,18 @@ class AureliaStatsPlugin {
 
     this.observerLocator.taskQueue.flushMicroTaskQueue = function() {
       self.currentStats.microTaskQueueSize = Math.max(self.currentStats.microTaskQueueSize, this.microTaskQueue.length);
-      var startTime = Date.now();
+      var startTime = self.now();
       oldFlushMicroTaskQueue.call(this);
-      self.currentStats.microTaskQueueLength += Date.now() - startTime;
+      self.currentStats.microTaskQueueLength += self.now() - startTime;
     };
 
     var oldFlushTaskQueue = this.observerLocator.taskQueue.flushTaskQueue;
 
     this.observerLocator.taskQueue.flushTaskQueue = function() {
       self.currentStats.taskQueueSize = Math.max(self.currentStats.taskQueueSize, this.taskQueue.length);
-      var startTime = Date.now();
+      var startTime = self.now();
       oldFlushTaskQueue.call(this);
-      self.currentStats.taskQueueLength += Date.now() - startTime;
+      self.currentStats.taskQueueLength += self.now() - startTime;
     };
   }
 
@@ -184,7 +192,14 @@ class AureliaStatsPlugin {
   }
 
   getCurrentStats() {
-    return this.currentStats;
+    return {
+      dirtyCheckerSize: this.currentStats.dirtyCheckerSize,
+      dirtyCheckerLength: Math.round(this.currentStats.dirtyCheckerLength * 100) / 100,
+      microTaskQueueSize: this.currentStats.microTaskQueueSize,
+      microTaskQueueLength: Math.round(this.currentStats.microTaskQueueLength * 100) / 100,
+      taskQueueSize: this.currentStats.taskQueueSize,
+      taskQueueLength: Math.round(this.currentStats.taskQueueLength * 100) / 100
+    };
   }
 
   task() {
