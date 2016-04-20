@@ -1,6 +1,6 @@
 {
   "name": "aurelia-stats",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An Aurelia plugin for getting digest loop real time statistics.",
   "keywords": [
     "aurelia",
