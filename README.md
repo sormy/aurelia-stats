@@ -57,7 +57,7 @@ Expected to be used only in browser environment and only for debug purposes.
 
 ## Configuration ##
 
-Plugin options could be passsed like below:
+Plugin options could be passed like below:
 
   ```javascript
   aurelia.use.plugin('aurelia-stats', {
