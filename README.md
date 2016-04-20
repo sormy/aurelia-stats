@@ -37,7 +37,7 @@ Expected to be used only in browser environment and only for debug purposes.
 3. Include plugin's CSS in your app's index.html:
   
   ```css
-  <link rel="stylesheet" href="jspm_packages/github/sormy/aurelia-stats@1.0.0/aurelia-stats.css">
+  <link rel="stylesheet" href="jspm_packages/github/sormy/aurelia-stats@1.0.1/aurelia-stats.css">
   ```
 
 ## Syntax ##
